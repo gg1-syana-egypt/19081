@@ -225,25 +225,39 @@
             <!-- Hero Section -->
             <section class="relative bg-green_brand text-white overflow-hidden">
                 <div class="absolute inset-0 opacity-10 bg-[url('https://placehold.co/1920x1080/0F4C3A/ffffff?text=Pattern')] bg-cover bg-center"></div>
-                <div class="container mx-auto px-4 py-16 md:py-24 relative z-10 flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2 text-center md:text-right">
-                        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                            صيانة متخصصة ومستقلة لجميع <span class="text-gold">الأجهزة المنزلية</span>
-                        </h1>
-                        <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-                            نحن في <span class="font-sans font-bold">syana Egypt</span> نقدم لك أفضل حلول الإصلاح السريعة والفعالة بأيدي خبراء متخصصين. (مركز صيانة مستقل).
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <a href="#home-contact" class="bg-gold hover:bg-yellow-500 text-green_brand font-bold text-lg py-3 px-8 rounded-full transition shadow-lg text-center">
-                                احجز موعد صيانة
+                <div class="container mx-auto px-4 py-12 md:py-16 relative z-10">
+                    
+                    <!-- Animated Hotline Banner for Home Page -->
+                    <div class="mb-12 text-center bg-black/20 p-8 rounded-3xl backdrop-blur-md border border-gold/30 shadow-2xl max-w-4xl mx-auto">
+                        <p class="text-xl md:text-2xl font-bold mb-2 text-white">الخط الساخن الموحد لجميع الأجهزة</p>
+                        <a href="tel:19081" class="inline-block transition-transform hover:scale-105">
+                            <div class="hotline-pulse text-6xl md:text-8xl lg:text-9xl font-black text-gold mb-6 tracking-widest font-sans flex items-center justify-center gap-4" dir="ltr">
+                                <i class="ph-fill ph-phone-call text-5xl md:text-7xl"></i>
+                                19081
+                            </div>
+                        </a>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="tel:19081" class="bg-gold hover:bg-yellow-400 text-green_brand font-bold text-xl md:text-2xl py-4 px-8 rounded-full transition shadow-lg flex items-center justify-center gap-3 w-full sm:w-auto">
+                                <i class="ph ph-phone text-3xl"></i> اتصل الآن
                             </a>
-                            <a href="tel:19081" class="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-green_brand font-bold text-lg py-3 px-8 rounded-full transition shadow-lg flex items-center justify-center gap-2">
-                                <i class="ph ph-phone-call text-xl"></i> اتصل 19081
+                            <a href="https://wa.me/201102670999" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold text-xl md:text-2xl py-4 px-8 rounded-full transition shadow-lg flex items-center justify-center gap-3 w-full sm:w-auto">
+                                <i class="ph ph-whatsapp text-3xl"></i> تواصل واتس اب
                             </a>
                         </div>
                     </div>
-                    <div class="md:w-1/2 w-full">
-                        ${getServiceFormHTML()}
+
+                    <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/2 text-center md:text-right">
+                            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                                صيانة متخصصة ومستقلة لجميع <span class="text-gold">الأجهزة المنزلية</span>
+                            </h1>
+                            <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+                                نحن في <span class="font-sans font-bold">syana Egypt</span> نقدم لك أفضل حلول الإصلاح السريعة والفعالة بأيدي خبراء متخصصين. (مركز صيانة مستقل).
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 w-full">
+                            ${getServiceFormHTML()}
+                        </div>
                     </div>
                 </div>
             </section>

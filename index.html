@@ -1,0 +1,522 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>syana Egypt - صيانة الأجهزة المنزلية</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        gold_light: '#F3E5AB',
+                        green_brand: '#0F4C3A',
+                        green_light: '#E8F5E9',
+                        green_accent: '#2E8B57',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0F4C3A; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(15, 76, 58, 0.2);
+        }
+
+        /* Animation for Hotline */
+        @keyframes pulse-hotline {
+            0% { transform: scale(1); text-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+            50% { transform: scale(1.05); text-shadow: 0 0 40px rgba(212, 175, 55, 1); color: #FFF; }
+            100% { transform: scale(1); text-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+        }
+        .hotline-pulse {
+            animation: pulse-hotline 1.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-gold">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-2">
+                <span class="text-3xl font-extrabold text-green_brand tracking-wider font-sans">syana<span class="text-gold">Egypt</span></span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6 font-semibold text-gray-600">
+                <a href="#home" class="hover:text-green_brand transition">الرئيسية</a>
+                <a href="#home-brands" class="hover:text-green_brand transition">الماركات</a>
+                <a href="#home-faq" class="hover:text-green_brand transition">سؤال وجواب</a>
+                <a href="#privacy" class="hover:text-green_brand transition">سياسة الخصوصية</a>
+                <a href="#home-contact" class="hover:text-green_brand transition">اتصل بنا</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="tel:19081" class="hidden sm:flex bg-green_brand text-white px-5 py-2 rounded-full font-bold items-center gap-2 hover:bg-green_accent transition shadow-lg">
+                    <i class="ph ph-phone-call text-xl text-gold"></i>
+                    19081
+                </a>
+                <a href="https://wa.me/201102670999" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full font-bold items-center gap-2 hover:bg-green-600 transition shadow-lg flex">
+                    <i class="ph ph-whatsapp text-xl"></i>
+                    <span class="hidden sm:inline">واتساب</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area (Dynamic via JS) -->
+    <main id="app-root" class="flex-grow flex flex-col"></main>
+
+    <!-- Footer -->
+    <footer class="bg-green_brand text-white pt-12 pb-6 border-t-8 border-gold mt-auto">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-gold font-sans">syana Egypt</h3>
+                <p class="text-gray-200 mb-4 text-sm leading-relaxed">
+                    مركز مستقل متخصص في تقديم خدمات صيانة وإصلاح الأجهزة المنزلية بكفاءة عالية وبأيدي فنيين محترفين. هدفنا إطالة عمر أجهزتك بأفضل جودة.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-gold">عناوين الفروع</h4>
+                <ul class="space-y-3 text-gray-200">
+                    <li class="flex items-start gap-2">
+                        <i class="ph ph-map-pin text-xl text-gold mt-1"></i>
+                        <span>الفرع الأول: العاشر من رمضان</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="ph ph-map-pin text-xl text-gold mt-1"></i>
+                        <span>الفرع الثاني: المنطقة الصناعية في أكتوبر</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-gold">تواصل معنا</h4>
+                <ul class="space-y-3 text-gray-200">
+                    <li class="flex items-center gap-2">
+                        <i class="ph ph-phone text-xl text-gold"></i>
+                        <span dir="ltr" class="font-bold">19081</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="ph ph-whatsapp text-xl text-gold"></i>
+                        <span dir="ltr" class="font-bold">01102670999</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 border-t border-gray-600 pt-6">
+            <div class="bg-red-900/40 border border-red-500 p-4 rounded-lg text-center shadow-inner mb-6">
+                <p class="text-sm md:text-base font-bold text-red-100 leading-relaxed">
+                    <i class="ph ph-warning-circle inline-block mr-1 text-gold text-lg align-middle"></i>
+                    إخلاء مسؤولية: نحن مركز صيانة مستقل متخصص في إصلاح الأجهزة المنزلية، ولسنا وكلاء معتمدين أو تابعين لأي علامة تجارية مذكورة في هذا الموقع. جميع العلامات التجارية (مثل توشيبا، كريازي، وغيرها) هي ملك لأصحابها وتستخدم لغرض التوضيح وبيان التخصص فقط.
+                </p>
+            </div>
+            <p class="text-center text-sm text-gray-400">
+                &copy; <span id="year"></span> syana Egypt. جميع الحقوق محفوظة لمركزنا المستقل.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Templates & Scripts -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Data for Brands
+        const brandsData = [
+            { id: 'kiriazi', name: 'كريازي', nameEn: 'Kiriazi' },
+            { id: 'toshiba', name: 'توشيبا', nameEn: 'Toshiba' },
+            { id: 'whitepoint', name: 'وايت بوينت', nameEn: 'White Point' },
+            { id: 'universal', name: 'يونيفرسال', nameEn: 'Universal' },
+            { id: 'fresh', name: 'فريش', nameEn: 'Fresh' },
+            { id: 'unionaire', name: 'يونيون اير', nameEn: 'Unionaire' },
+            { id: 'lg', name: 'ال جي', nameEn: 'LG' },
+            { id: 'samsung', name: 'سامسونج', nameEn: 'Samsung' }
+        ];
+
+        // Shared Form HTML Template
+        const getServiceFormHTML = (prefilledBrand = '', title = 'اطلب الصيانة الآن') => `
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border-t-4 border-gold">
+                <h3 class="text-2xl font-bold text-green_brand mb-6 text-center">${title}</h3>
+                <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">الاسم الكريم</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green_brand focus:ring-2 focus:ring-green_light outline-none transition" placeholder="ادخل اسمك">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">رقم الهاتف</label>
+                        <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green_brand focus:ring-2 focus:ring-green_light outline-none transition" placeholder="مثال: 01xxxxxxxxx">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">نوع الجهاز</label>
+                            <select name="device" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green_brand outline-none bg-white">
+                                <option value="ثلاجة">ثلاجة</option>
+                                <option value="غسالة ملابس">غسالة ملابس</option>
+                                <option value="غسالة أطباق">غسالة أطباق</option>
+                                <option value="تكييف">تكييف</option>
+                                <option value="بوتاجاز">بوتاجاز</option>
+                                <option value="ديب فريزر">ديب فريزر</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">الماركة</label>
+                            <select name="brand" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green_brand outline-none bg-white">
+                                ${brandsData.map(b => `<option value="${b.name}" ${b.id === prefilledBrand ? 'selected' : ''}>${b.name}</option>`).join('')}
+                                <option value="أخرى">أخرى (يرجى التوضيح في العطل)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">وصف العطل باختصار</label>
+                        <textarea name="issue" rows="3" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green_brand focus:ring-2 focus:ring-green_light outline-none transition" placeholder="ما هي المشكلة التي تواجهها؟"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green_brand hover:bg-green_accent text-white font-bold py-4 rounded-lg transition duration-300 shadow-md flex justify-center items-center gap-2 text-lg mt-4">
+                        <i class="ph ph-whatsapp text-2xl text-gold"></i>
+                        إرسال الطلب عبر واتساب
+                    </button>
+                    <p class="text-xs text-center text-gray-500 mt-2">سيتم تحويلك مباشرة لمحادثة واتساب لتأكيد الطلب</p>
+                </form>
+            </div>
+        `;
+
+        // Handle Form Submission (Redirect to WA)
+        window.handleFormSubmit = function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.name.value;
+            const phone = form.phone.value;
+            const device = form.device.value;
+            const brand = form.brand.value;
+            const issue = form.issue.value;
+
+            const message = `*طلب صيانة جديد (syana Egypt)*\n\n👤 *الاسم:* ${name}\n📞 *الهاتف:* ${phone}\n📺 *الجهاز:* ${device}\n🏷️ *الماركة:* ${brand}\n🛠️ *العطل:* ${issue}\n\nيرجى التواصل معي لتحديد موعد.`;
+            
+            const whatsappUrl = `https://wa.me/201102670999?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // View: Home
+        const renderHome = () => `
+            <!-- Hero Section -->
+            <section class="relative bg-green_brand text-white overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[url('https://placehold.co/1920x1080/0F4C3A/ffffff?text=Pattern')] bg-cover bg-center"></div>
+                <div class="container mx-auto px-4 py-16 md:py-24 relative z-10 flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 text-center md:text-right">
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                            صيانة متخصصة ومستقلة لجميع <span class="text-gold">الأجهزة المنزلية</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+                            نحن في <span class="font-sans font-bold">syana Egypt</span> نقدم لك أفضل حلول الإصلاح السريعة والفعالة بأيدي خبراء متخصصين. (مركز صيانة مستقل).
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#home-contact" class="bg-gold hover:bg-yellow-500 text-green_brand font-bold text-lg py-3 px-8 rounded-full transition shadow-lg text-center">
+                                احجز موعد صيانة
+                            </a>
+                            <a href="tel:19081" class="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-green_brand font-bold text-lg py-3 px-8 rounded-full transition shadow-lg flex items-center justify-center gap-2">
+                                <i class="ph ph-phone-call text-xl"></i> اتصل 19081
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 w-full">
+                        ${getServiceFormHTML()}
+                    </div>
+                </div>
+            </section>
+
+            <!-- Brands Section -->
+            <section id="home-brands" class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-green_brand mb-3">الماركات التي نقوم بصيانتها</h2>
+                        <div class="w-24 h-1 bg-gold mx-auto rounded"></div>
+                        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">نقدم خدمات إصلاح متخصصة للعديد من الأجهزة. اختر ماركة جهازك لمعرفة المزيد وطلب الخدمة.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        ${brandsData.map(brand => `
+                            <a href="#brand-${brand.id}" class="brand-card bg-gray-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center justify-center text-center transition duration-300 group">
+                                <div class="w-16 h-16 bg-green_light text-green_brand rounded-full flex items-center justify-center mb-4 group-hover:bg-green_brand group-hover:text-gold transition">
+                                    <i class="ph ph-wrench text-3xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">${brand.name}</h3>
+                                <p class="text-sm text-gray-500 mt-1 font-sans">${brand.nameEn}</p>
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="home-faq" class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4 max-w-4xl">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-green_brand mb-3">أسئلة شائعة</h2>
+                        <div class="w-24 h-1 bg-gold mx-auto rounded"></div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- FAQ 1 -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                            <details class="group">
+                                <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-gray-800 hover:text-green_brand transition">
+                                    <span>هل أنتم توكيل معتمد لأي من الماركات المذكورة؟</span>
+                                    <span class="transition group-open:rotate-180">
+                                        <i class="ph ph-caret-down text-xl"></i>
+                                    </span>
+                                </summary>
+                                <div class="p-5 pt-0 text-gray-600 leading-relaxed border-t border-gray-50 mt-2">
+                                    لا، نحن <strong class="text-green_brand">مركز صيانة مستقل</strong> تماماً ومتخصص في إصلاح الأجهزة المنزلية بمهارة عالية. جميع الأسماء التجارية المذكورة تستخدم فقط لتوضيح الأجهزة التي نجيد التعامل معها، ولسنا وكلاء أو تابعين لأي جهة رسمية.
+                                </div>
+                            </details>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                            <details class="group">
+                                <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-gray-800 hover:text-green_brand transition">
+                                    <span>كيف يمكنني طلب خدمة الصيانة؟</span>
+                                    <span class="transition group-open:rotate-180">
+                                        <i class="ph ph-caret-down text-xl"></i>
+                                    </span>
+                                </summary>
+                                <div class="p-5 pt-0 text-gray-600 leading-relaxed border-t border-gray-50 mt-2">
+                                    يمكنك طلب الخدمة بسهولة عبر ملء النموذج الموجود في الموقع ليتم تحويلك فوراً لتأكيد الطلب عبر الواتساب، أو يمكنك الاتصال مباشرة على رقمنا الموحد 19081.
+                                </div>
+                            </details>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                            <details class="group">
+                                <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-gray-800 hover:text-green_brand transition">
+                                    <span>أين تتواجد فروعكم؟</span>
+                                    <span class="transition group-open:rotate-180">
+                                        <i class="ph ph-caret-down text-xl"></i>
+                                    </span>
+                                </summary>
+                                <div class="p-5 pt-0 text-gray-600 leading-relaxed border-t border-gray-50 mt-2">
+                                    نمتلك حالياً فرعين رئيسيين لخدمتكم: الفرع الأول يقع في العاشر من رمضان، والفرع الثاني يقع في المنطقة الصناعية بمدينة 6 أكتوبر. ونغطي قطاعاً كبيراً من المناطق المجاورة.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="home-contact" class="py-16 bg-white border-t border-gray-100">
+                <div class="container mx-auto px-4 text-center">
+                     <h2 class="text-3xl font-bold text-green_brand mb-8">نحن هنا لمساعدتك</h2>
+                     <div class="flex flex-col md:flex-row justify-center gap-8 max-w-3xl mx-auto">
+                        <div class="bg-green_light p-8 rounded-2xl flex-1 border border-green-200">
+                            <i class="ph ph-phone-call text-5xl text-green_brand mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">الخط الساخن</h3>
+                            <p class="text-gray-600 mb-4">متاحون للرد على استفساراتكم</p>
+                            <a href="tel:19081" class="text-3xl font-extrabold text-green_brand tracking-widest block" dir="ltr">19081</a>
+                        </div>
+                        <div class="bg-green_light p-8 rounded-2xl flex-1 border border-green-200">
+                            <i class="ph ph-whatsapp text-5xl text-green_brand mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">التواصل عبر واتساب</h3>
+                            <p class="text-gray-600 mb-4">أرسل بياناتك وصورة العطل</p>
+                            <a href="https://wa.me/201102670999" target="_blank" class="text-3xl font-extrabold text-green_brand tracking-widest block" dir="ltr">01102670999</a>
+                        </div>
+                     </div>
+                </div>
+            </section>
+        `;
+
+        // View: Brand Page
+        const renderBrandPage = (brandId) => {
+            const brand = brandsData.find(b => b.id === brandId);
+            if (!brand) return renderHome(); // fallback
+
+            return `
+                <div class="bg-gray-50 pb-16">
+                    <!-- Top Section: Image + Form -->
+                    <div class="bg-green_brand text-white pt-10 pb-20 rounded-b-[3rem] shadow-lg mb-10 relative">
+                        <div class="absolute inset-0 opacity-5 bg-[url('https://placehold.co/1920x500/000000/ffffff?text=Tech')] bg-cover bg-center rounded-b-[3rem]"></div>
+                        <div class="container mx-auto px-4 relative z-10">
+                            
+                            <!-- New Animated Hotline Banner -->
+                            <div class="mb-10 text-center bg-black/20 p-8 rounded-3xl backdrop-blur-md border border-gold/30 shadow-2xl">
+                                <p class="text-xl md:text-2xl font-bold mb-2 text-white">الخط الساخن الموحد لصيانة ${brand.name}</p>
+                                <a href="tel:19081" class="inline-block transition-transform hover:scale-105">
+                                    <div class="hotline-pulse text-6xl md:text-8xl lg:text-9xl font-black text-gold mb-6 tracking-widest font-sans flex items-center justify-center gap-4" dir="ltr">
+                                        <i class="ph-fill ph-phone-call text-5xl md:text-7xl"></i>
+                                        19081
+                                    </div>
+                                </a>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <a href="tel:19081" class="bg-gold hover:bg-yellow-400 text-green_brand font-bold text-xl md:text-2xl py-4 px-8 rounded-full transition shadow-lg flex items-center justify-center gap-3 w-full sm:w-auto">
+                                        <i class="ph ph-phone text-3xl"></i> اتصل الآن
+                                    </a>
+                                    <a href="https://wa.me/201102670999" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold text-xl md:text-2xl py-4 px-8 rounded-full transition shadow-lg flex items-center justify-center gap-3 w-full sm:w-auto">
+                                        <i class="ph ph-whatsapp text-3xl"></i> تواصل واتس اب
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="mb-8 text-center md:text-right border-t border-white/10 pt-8">
+                                <a href="#home" class="inline-flex items-center gap-2 text-gold hover:text-white transition mb-4 bg-white/10 px-4 py-1 rounded-full backdrop-blur-sm">
+                                    <i class="ph ph-arrow-right"></i> عودة للرئيسية
+                                </a>
+                                <h1 class="text-3xl md:text-5xl font-bold">صيانة أجهزة <span class="text-gold">${brand.name}</span></h1>
+                                <p class="text-gray-200 mt-2 text-lg">مركز خدمة متخصص ومستقل لإصلاح أعطال ${brand.name}</p>
+                            </div>
+
+                            <div class="flex flex-col lg:flex-row gap-8 items-start">
+                                <!-- Form Area -->
+                                <div class="w-full lg:w-1/2 xl:w-5/12 text-gray-800 relative z-20 -mb-24">
+                                    ${getServiceFormHTML(brand.id, `طلب صيانة ${brand.name}`)}
+                                </div>
+                                
+                                <!-- Image & Call Area -->
+                                <div class="w-full lg:w-1/2 xl:w-7/12 flex flex-col items-center lg:items-start pt-4">
+                                    <div class="w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-gold mb-8 bg-white h-64 md:h-80">
+                                        <!-- Placeholder for Technician Image -->
+                                        <img src="https://placehold.co/800x600/E8F5E9/0F4C3A?text=صورة+فني+صيانة+يعمل+على+جهاز+${encodeURIComponent(brand.name)}" 
+                                             alt="فني يقوم بصيانة جهاز ${brand.name}" 
+                                             class="w-full h-full object-cover">
+                                    </div>
+                                    
+                                    <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/20 w-full text-center">
+                                        <h3 class="text-xl font-bold mb-4 text-white">هل تواجه مشكلة طارئة؟</h3>
+                                        <a href="tel:19081" class="inline-flex items-center justify-center gap-3 bg-gold hover:bg-yellow-500 text-green_brand font-bold text-2xl py-4 px-10 rounded-full transition shadow-lg w-full md:w-auto">
+                                            <i class="ph ph-phone-call text-3xl"></i>
+                                            اتصل الآن 19081
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEO & Content Section below the fold -->
+                    <div class="container mx-auto px-4 mt-20 md:mt-12 max-w-5xl">
+                        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+                            <h2 class="text-3xl font-bold text-green_brand mb-6 border-b-2 border-gold pb-2 inline-block">خدمات إصلاح الأجهزة المنزلية (${brand.name})</h2>
+                            
+                            <div class="prose prose-lg text-gray-600 leading-loose max-w-none">
+                                <p class="mb-4">
+                                    إذا كنت تبحث عن خدمة موثوقة لإصلاح أجهزتك، فإن <strong>syana Egypt</strong> توفر لك الحل الأمثل. نحن <strong class="text-red-600">مركز صيانة مستقل</strong> متخصصون في التعامل مع الأعطال التقنية والميكانيكية الخاصة بمنتجات <strong>${brand.name}</strong> بكفاءة عالية.
+                                </p>
+                                <p class="mb-4">
+                                    فريق الفنيين لدينا مدرب على تشخيص وإصلاح كافة المشاكل التي قد تواجه أجهزتك (الثلاجات، الغسالات، الديب فريزر، التكييفات). نحن نحرص على تقديم خدمة سريعة في مواقع تواجدنا سواء في العاشر من رمضان أو المنطقة الصناعية بأكتوبر، مع إمكانية وصول الفني إليك لحل المشكلة في أسرع وقت.
+                                </p>
+                                <div class="bg-green_light p-6 rounded-xl my-6 border border-green-200">
+                                    <h4 class="text-xl font-bold text-green_brand mb-3">لماذا تختارنا لخدمة جهازك؟</h4>
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>تشخيص دقيق وسريع للأعطال.</li>
+                                        <li>فنيون ذوو خبرة وكفاءة في التعامل مع التكنولوجيا الحديثة.</li>
+                                        <li>أسعار تنافسية وواضحة قبل البدء بالإصلاح.</li>
+                                        <li>الشفافية التامة: نحن مركز مستقل ولا ندعي تبعيتنا كوكلاء لأي علامة تجارية.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // View: Privacy Policy
+        const renderPrivacy = () => `
+            <div class="bg-gray-50 py-16 flex-grow">
+                <div class="container mx-auto px-4 max-w-4xl">
+                    <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+                        <h1 class="text-4xl font-bold text-green_brand mb-6">سياسة الخصوصية</h1>
+                        <div class="w-24 h-1 bg-gold rounded mb-8"></div>
+                        
+                        <div class="prose prose-lg text-gray-700 leading-loose max-w-none space-y-6">
+                            <div class="bg-green_light p-6 rounded-xl border border-green-200 flex items-start gap-4">
+                                <i class="ph ph-cookie text-4xl text-green_brand mt-1"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold text-green_brand mb-2">موقع بدون كوكيز (Cookies-Free)</h3>
+                                    <p>نحن نحترم خصوصيتك بشكل كامل. <strong>هذا الموقع لا يستخدم ملفات تعريف الارتباط (Cookies)</strong> بأي شكل من الأشكال، ولا يقوم بتتبع نشاطك عبر الإنترنت.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">جمع المعلومات</h3>
+                                <p>المعلومات الوحيدة التي نجمعها هي تلك التي تقوم بتقديمها طواعية عند ملء نموذج طلب الصيانة (الاسم، رقم الهاتف، تفاصيل العطل). يتم نقل هذه البيانات مباشرة لخدمة الواتساب الخاصة بنا لغرض التواصل معك وتقديم الخدمة فقط.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">مشاركة البيانات</h3>
+                                <p>نحن لا نبيع، نؤجر، أو نشارك معلوماتك الشخصية مع أي أطراف ثالثة. جميع بياناتك تُعامل بسرية تامة وتستخدم حصراً لتنفيذ مهام الصيانة المطلوبة.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">إخلاء المسؤولية القانونية</h3>
+                                <p>syana Egypt هو كيان ومركز صيانة مستقل لتقديم خدمات الإصلاح والدعم الفني للأجهزة المنزلية. نحن لسنا تابعين، ولا نمثل، ولسنا وكلاء معتمدين لأي شركة أو علامة تجارية مذكورة في هذا الموقع. استخدام أسماء العلامات التجارية يكون للوصف والتوضيح فقط.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-6 border-t border-gray-200 text-center">
+                            <a href="#home" class="inline-flex bg-green_brand text-white px-6 py-3 rounded-full font-bold hover:bg-green_accent transition">
+                                العودة للصفحة الرئيسية
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Router Logic
+        const router = () => {
+            const hash = window.location.hash.substring(1) || 'home';
+            const root = document.getElementById('app-root');
+            
+            // Scroll to top on route change
+            window.scrollTo(0, 0);
+
+            if (hash === 'home' || hash === '' || hash.startsWith('home-')) {
+                root.innerHTML = renderHome();
+                // If there's a specific section hash like #home-faq, scroll to it after rendering
+                if (hash.startsWith('home-')) {
+                    setTimeout(() => {
+                        const target = document.getElementById(hash);
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }, 50);
+                }
+            } else if (hash.startsWith('brand-')) {
+                const brandId = hash.replace('brand-', '');
+                root.innerHTML = renderBrandPage(brandId);
+            } else if (hash === 'privacy') {
+                root.innerHTML = renderPrivacy();
+            } else {
+                root.innerHTML = renderHome(); // Default fallback
+            }
+        };
+
+        // Initialize App
+        window.addEventListener('hashchange', router);
+        window.addEventListener('load', router);
+
+    </script>
+</body>
+</html>
+```

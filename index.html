@@ -68,6 +68,7 @@
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-6 font-semibold text-gray-600">
                 <a href="#home" class="hover:text-green_brand transition">الرئيسية</a>
+                <a href="#home-services" class="hover:text-green_brand transition">خدماتنا</a>
                 <a href="#home-brands" class="hover:text-green_brand transition">الماركات</a>
                 <a href="#home-faq" class="hover:text-green_brand transition">سؤال وجواب</a>
                 <a href="#privacy" class="hover:text-green_brand transition">سياسة الخصوصية</a>
@@ -141,6 +142,18 @@
             </p>
         </div>
     </footer>
+
+    <!-- Floating Action Buttons (FABs) -->
+    <div class="fixed bottom-6 left-6 z-[100] flex flex-col gap-3">
+        <a href="tel:01104701708" class="bg-green-600 text-white font-bold py-3 px-5 rounded-full shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3)] flex items-center gap-2 hover:bg-green-700 hover:-translate-y-1 transition transform border-2 border-white">
+            <i class="ph-fill ph-phone-call text-xl animate-pulse"></i>
+            <span dir="ltr">01104701708</span>
+        </a>
+        <a href="tel:19081" class="bg-gold text-green_brand font-extrabold py-3 px-5 rounded-full shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3)] flex items-center gap-2 hover:bg-yellow-400 hover:-translate-y-1 transition transform border-2 border-white">
+            <i class="ph-fill ph-phone text-xl animate-pulse"></i>
+            <span dir="ltr">19081</span>
+        </a>
+    </div>
 
     <!-- Templates & Scripts -->
     <script>
@@ -257,6 +270,62 @@
                         </div>
                         <div class="md:w-1/2 w-full">
                             ${getServiceFormHTML()}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="home-services" class="py-16 bg-gray-50 border-b border-gray-100">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-green_brand mb-3">خدماتنا المتميزة</h2>
+                        <div class="w-24 h-1 bg-gold mx-auto rounded"></div>
+                        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">نقدم مجموعة شاملة من خدمات الصيانة المنزلية لضمان عمل أجهزتك بكفاءة تامة على أيدي أفضل الفنيين.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <!-- Service 1 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold hover:shadow-lg transition duration-300 group text-center flex flex-col items-center">
+                            <div class="w-16 h-16 bg-green_light text-green_brand rounded-full flex items-center justify-center mb-4 group-hover:bg-green_brand group-hover:text-gold transition">
+                                <i class="ph ph-t-shirt text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">صيانة غسالات</h3>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold hover:shadow-lg transition duration-300 group text-center flex flex-col items-center">
+                            <div class="w-16 h-16 bg-green_light text-green_brand rounded-full flex items-center justify-center mb-4 group-hover:bg-green_brand group-hover:text-gold transition">
+                                <i class="ph ph-thermometer-cold text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">صيانة ثلاجات</h3>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold hover:shadow-lg transition duration-300 group text-center flex flex-col items-center">
+                            <div class="w-16 h-16 bg-green_light text-green_brand rounded-full flex items-center justify-center mb-4 group-hover:bg-green_brand group-hover:text-gold transition">
+                                <i class="ph ph-snowflake text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">صيانة ديب فريزر</h3>
+                        </div>
+                        <!-- Service 4 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold hover:shadow-lg transition duration-300 group text-center flex flex-col items-center">
+                            <div class="w-16 h-16 bg-green_light text-green_brand rounded-full flex items-center justify-center mb-4 group-hover:bg-green_brand group-hover:text-gold transition">
+                                <i class="ph ph-fire text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">صيانة سخانات</h3>
+                        </div>
+                        <!-- Service 5 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold hover:shadow-lg transition duration-300 group text-center flex flex-col items-center">
+                            <div class="w-16 h-16 bg-green_light text-green_brand rounded-full flex items-center justify-center mb-4 group-hover:bg-green_brand group-hover:text-gold transition">
+                                <i class="ph ph-cooking-pot text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">صيانة فرن بلت ان</h3>
+                        </div>
+                        <!-- Service 6 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold hover:shadow-lg transition duration-300 group text-center flex flex-col items-center">
+                            <div class="w-16 h-16 bg-green_light text-green_brand rounded-full flex items-center justify-center mb-4 group-hover:bg-green_brand group-hover:text-gold transition">
+                                <i class="ph ph-drop text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">صيانة غسالات اطباق</h3>
                         </div>
                     </div>
                 </div>
